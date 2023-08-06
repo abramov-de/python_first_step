@@ -23,7 +23,9 @@ class Player(pygame.sprite.Sprite):
     def update(self):
         self.rect.x += 5
         if self.rect.left > WIDTH:
-            self.rect.right = 0
+            # self.rect.right = 0
+            self.rect.speedX *= -1
+            self.rect.x += self.rect.speedX
 
 
 # Create game and window
