@@ -10,17 +10,20 @@ x_values = []
 for i in json_data['measurements']:
     x_value = i['x']
     angle_x = i['angle']
-    distance_x = i['distance']
-    x_values.append(x_value + cos(angle_x))
+    if i['distance'] == 'null':
+        distance_x = 0
+    else:
+        distance_x = i['distance']
+    x_values.append(x_value + (cos(angle_x) * distance_x))
 
 y_values = []
 for i in json_data['measurements']:
     y_value = i['y']
     angle_y = i['angle']
     distance_y = i['distance']
-    y_values.append(y_value + sin(angle_y))
+    y_values.append(y_value + (sin(angle_y) * distance_y))
 
-plt.scatter(x_values, y_values)
+plt.plot(x_values, y_values)
 plt.show()
 
 print(x_values)
