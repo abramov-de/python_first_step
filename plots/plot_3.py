@@ -1,5 +1,6 @@
 import json
 import matplotlib.pyplot as plt
+from math import cos, sin
 
 json_file = open('Sergey_Kuznetsov.json', 'r')
 json_data = json.load(json_file)
@@ -8,12 +9,16 @@ json_file.close()
 x_values = []
 for i in json_data['measurements']:
     x_value = i['x']
-    x_values.append(x_value)
+    angle_x = i['angle']
+    distance_x = i['distance']
+    x_values.append(x_value + cos(angle_x))
 
 y_values = []
 for i in json_data['measurements']:
     y_value = i['y']
-    y_values.append(y_value)
+    angle_y = i['angle']
+    distance_y = i['distance']
+    y_values.append(y_value + sin(angle_y))
 
 plt.scatter(x_values, y_values)
 plt.show()
