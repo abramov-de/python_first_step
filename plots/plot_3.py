@@ -8,8 +8,15 @@ json_file.close()
 #     json_data = user_file.read()
 # print(file_contents)
 
-x_values = json_data['measurements'][0]['x']
-y_values = json_data['measurements'][0]['y']
+x_values = []
+for i in json_data['measurements']:
+    x_value = i['x']
+    x_values.append(x_value)
+
+y_values = []
+for i in json_data['measurements']:
+    y_value = i['y']
+    y_values.append(y_value)
 
 print(x_values)
 print(y_values)
