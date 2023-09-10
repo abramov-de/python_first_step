@@ -25,7 +25,7 @@ for i in json_data['measurements']:
     else:
         break
 
-ang_dist = list(zip(angles, dists))
+ang_dist = list(zip(angles, dists, x_values, y_values))
 sort_ang_dist = sorted(ang_dist)
 
 print(angles)
@@ -40,3 +40,8 @@ print("ang_dist type:", type(ang_dist))
 print("sort_ang_dist type:", type(sort_ang_dist))
 print("x_values type:", type(x_values))
 print("y_values type:", type(y_values))
+
+for i in range(len(sort_ang_dist)):
+    plt.scatter(sort_ang_dist[i][2], sort_ang_dist[i][3])
+
+plt.show()
