@@ -68,15 +68,35 @@ for i in json_data['measurements']:
         dists9.append(i['distance'])
         angles9.append(i['angle'])
 
-center1 = list(zip(dists1, angles1))
-center2 = list(zip(dists2, angles2))
-center3 = list(zip(dists3, angles3))
-center4 = list(zip(dists4, angles4))
-center5 = list(zip(dists5, angles5))
-center6 = list(zip(dists6, angles6))
-center7 = list(zip(dists7, angles7))
-center8 = list(zip(dists8, angles8))
-center9 = list(zip(dists9, angles9))
+dists1 = [item if item else 0 for item in dists1]
+dists2 = [item if item else 0 for item in dists2]
+dists3 = [item if item else 0 for item in dists3]
+dists4 = [item if item else 0 for item in dists4]
+dists5 = [item if item else 0 for item in dists5]
+dists6 = [item if item else 0 for item in dists6]
+dists7 = [item if item else 0 for item in dists7]
+dists8 = [item if item else 0 for item in dists8]
+dists9 = [item if item else 0 for item in dists9]
+
+# center1 = list(zip(dists1, angles1))
+# center2 = list(zip(dists2, angles2))
+# center3 = list(zip(dists3, angles3))
+# center4 = list(zip(dists4, angles4))
+# center5 = list(zip(dists5, angles5))
+# center6 = list(zip(dists6, angles6))
+# center7 = list(zip(dists7, angles7))
+# center8 = list(zip(dists8, angles8))
+# center9 = list(zip(dists9, angles9))
+#
+# sort_center1 = sorted(center1)
+# sort_center2 = sorted(center2)
+# sort_center3 = sorted(center3)
+# sort_center4 = sorted(center4)
+# sort_center5 = sorted(center5)
+# sort_center6 = sorted(center6)
+# sort_center7 = sorted(center7)
+# sort_center8 = sorted(center8)
+# sort_center9 = sorted(center9)
 
 print(Y[0], dists1)
 print(Y[0], angles1)
@@ -96,18 +116,27 @@ print(Y[7], dists8)
 print(Y[7], angles8)
 print(Y[8], dists9)
 print(Y[8], angles9)
-print(center1)
-print(center2)
-print(center3)
-print(center4)
-print(center5)
-print(center6)
-print(center7)
-print(center8)
-print(center9)
 
-
-
+# print(center1)
+# print(center2)
+# print(center3)
+# print(center4)
+# print(center5)
+# print(center6)
+# print(center7)
+# print(center8)
+# print(center9)
+#
+# print(sort_center1)
+# print(sort_center2)
+# print(sort_center3)
+# print(sort_center4)
+# print(sort_center5)
+# print(sort_center6)
+# print(sort_center7)
+# print(sort_center8)
+# print(sort_center9)
+#
 
 # for i in json_data['measurements']:
 #     x_value = i['x']
