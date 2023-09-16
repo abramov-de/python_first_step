@@ -9,8 +9,8 @@ json_file.close()
 
 x_values = []
 y_values = []
-angles = []
-dists = []
+# angles = []
+# dists = []
 Y = []
 
 for i in json_data['measurements']:
@@ -20,45 +20,92 @@ for i in json_data['measurements']:
 
 Y = list(set(Y))
 
-center1 = []
-center2 = []
-center3 = []
-center4 = []
-center5 = []
-center6 = []
-center7 = []
-center8 = []
-center9 = []
+dists1 = []
+angles1 = []
+dists2 = []
+angles2 = []
+dists3 = []
+angles3 = []
+dists4 = []
+angles4 = []
+dists5 = []
+angles5 = []
+dists6 = []
+angles6 = []
+dists7 = []
+angles7 = []
+dists8 = []
+angles8 = []
+dists9 = []
+angles9 = []
 
 for i in json_data['measurements']:
     if i['Y'] == Y[0]:
-        center1.append(i['distance'])
+        dists1.append(i['distance'])
+        angles1.append(i['angle'])
     if i['Y'] == Y[1]:
-        center2.append(i['distance'])
+        dists2.append(i['distance'])
+        angles2.append(i['angle'])
     if i['Y'] == Y[2]:
-        center3.append(i['distance'])
+        dists3.append(i['distance'])
+        angles3.append(i['angle'])
     if i['Y'] == Y[3]:
-        center4.append(i['distance'])
+        dists4.append(i['distance'])
+        angles4.append(i['angle'])
     if i['Y'] == Y[4]:
-        center5.append(i['distance'])
+        dists5.append(i['distance'])
+        angles5.append(i['angle'])
     if i['Y'] == Y[5]:
-        center6.append(i['distance'])
+        dists6.append(i['distance'])
+        angles6.append(i['angle'])
     if i['Y'] == Y[6]:
-        center7.append(i['distance'])
+        dists7.append(i['distance'])
+        angles7.append(i['angle'])
     if i['Y'] == Y[7]:
-        center8.append(i['distance'])
+        dists8.append(i['distance'])
+        angles8.append(i['angle'])
     if i['Y'] == Y[8]:
-        center9.append(i['distance'])
+        dists9.append(i['distance'])
+        angles9.append(i['angle'])
 
-print(Y[0], center1)
-print(Y[1], center2)
-print(Y[2], center3)
-print(Y[3], center4)
-print(Y[4], center5)
-print(Y[5], center6)
-print(Y[6], center7)
-print(Y[7], center8)
-print(Y[8], center9)
+center1 = list(zip(dists1, angles1))
+center2 = list(zip(dists2, angles2))
+center3 = list(zip(dists3, angles3))
+center4 = list(zip(dists4, angles4))
+center5 = list(zip(dists5, angles5))
+center6 = list(zip(dists6, angles6))
+center7 = list(zip(dists7, angles7))
+center8 = list(zip(dists8, angles8))
+center9 = list(zip(dists9, angles9))
+
+print(Y[0], dists1)
+print(Y[0], angles1)
+print(Y[1], dists2)
+print(Y[1], angles2)
+print(Y[2], dists3)
+print(Y[2], angles3)
+print(Y[3], dists4)
+print(Y[3], angles4)
+print(Y[4], dists5)
+print(Y[4], angles5)
+print(Y[5], dists6)
+print(Y[5], angles6)
+print(Y[6], dists7)
+print(Y[6], angles7)
+print(Y[7], dists8)
+print(Y[7], angles8)
+print(Y[8], dists9)
+print(Y[8], angles9)
+print(center1)
+print(center2)
+print(center3)
+print(center4)
+print(center5)
+print(center6)
+print(center7)
+print(center8)
+print(center9)
+
 
 
 
