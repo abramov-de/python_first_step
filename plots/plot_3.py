@@ -1,16 +1,9 @@
 import json
-import matplotlib.pyplot as plt
-from math import cos, sin
-import jmespath
 
 json_file = open('Sergey_Kuznetsov.json', 'r')
 json_data = json.load(json_file)
 json_file.close()
 
-x_values = []
-y_values = []
-# angles = []
-# dists = []
 Y = []
 
 for i in json_data['measurements']:
@@ -41,30 +34,48 @@ angles9 = []
 
 for i in json_data['measurements']:
     if i['Y'] == Y[0]:
+        if i['mode'] == 'calibration':
+            continue
         dists1.append(i['distance'])
         angles1.append(i['angle'])
     if i['Y'] == Y[1]:
+        if i['mode'] == 'calibration':
+            continue
         dists2.append(i['distance'])
         angles2.append(i['angle'])
     if i['Y'] == Y[2]:
+        if i['mode'] == 'calibration':
+            continue
         dists3.append(i['distance'])
         angles3.append(i['angle'])
     if i['Y'] == Y[3]:
+        if i['mode'] == 'calibration':
+            continue
         dists4.append(i['distance'])
         angles4.append(i['angle'])
     if i['Y'] == Y[4]:
+        if i['mode'] == 'calibration':
+            continue
         dists5.append(i['distance'])
         angles5.append(i['angle'])
     if i['Y'] == Y[5]:
+        if i['mode'] == 'calibration':
+            continue
         dists6.append(i['distance'])
         angles6.append(i['angle'])
     if i['Y'] == Y[6]:
+        if i['mode'] == 'calibration':
+            continue
         dists7.append(i['distance'])
         angles7.append(i['angle'])
     if i['Y'] == Y[7]:
+        if i['mode'] == 'calibration':
+            continue
         dists8.append(i['distance'])
         angles8.append(i['angle'])
     if i['Y'] == Y[8]:
+        if i['mode'] == 'calibration':
+            continue
         dists9.append(i['distance'])
         angles9.append(i['angle'])
 
@@ -78,65 +89,35 @@ dists7 = [item if item else 0 for item in dists7]
 dists8 = [item if item else 0 for item in dists8]
 dists9 = [item if item else 0 for item in dists9]
 
-# center1 = list(zip(dists1, angles1))
-# center2 = list(zip(dists2, angles2))
-# center3 = list(zip(dists3, angles3))
-# center4 = list(zip(dists4, angles4))
-# center5 = list(zip(dists5, angles5))
-# center6 = list(zip(dists6, angles6))
-# center7 = list(zip(dists7, angles7))
-# center8 = list(zip(dists8, angles8))
-# center9 = list(zip(dists9, angles9))
-#
-# sort_center1 = sorted(center1)
-# sort_center2 = sorted(center2)
-# sort_center3 = sorted(center3)
-# sort_center4 = sorted(center4)
-# sort_center5 = sorted(center5)
-# sort_center6 = sorted(center6)
-# sort_center7 = sorted(center7)
-# sort_center8 = sorted(center8)
-# sort_center9 = sorted(center9)
+center1 = list(zip(angles1, dists1))
+center2 = list(zip(angles2, dists2))
+center3 = list(zip(angles3, dists3))
+center4 = list(zip(angles4, dists4))
+center5 = list(zip(angles5, dists5))
+center6 = list(zip(angles6, dists6))
+center7 = list(zip(angles7, dists7))
+center8 = list(zip(angles8, dists8))
+center9 = list(zip(angles9, dists9))
 
-print(Y[0], dists1)
-print(Y[0], angles1)
-print(Y[1], dists2)
-print(Y[1], angles2)
-print(Y[2], dists3)
-print(Y[2], angles3)
-print(Y[3], dists4)
-print(Y[3], angles4)
-print(Y[4], dists5)
-print(Y[4], angles5)
-print(Y[5], dists6)
-print(Y[5], angles6)
-print(Y[6], dists7)
-print(Y[6], angles7)
-print(Y[7], dists8)
-print(Y[7], angles8)
-print(Y[8], dists9)
-print(Y[8], angles9)
+sort_center1 = sorted(center1)
+sort_center2 = sorted(center2)
+sort_center3 = sorted(center3)
+sort_center4 = sorted(center4)
+sort_center5 = sorted(center5)
+sort_center6 = sorted(center6)
+sort_center7 = sorted(center7)
+sort_center8 = sorted(center8)
+sort_center9 = sorted(center9)
 
-# print(center1)
-# print(center2)
-# print(center3)
-# print(center4)
-# print(center5)
-# print(center6)
-# print(center7)
-# print(center8)
-# print(center9)
-#
-# print(sort_center1)
-# print(sort_center2)
-# print(sort_center3)
-# print(sort_center4)
-# print(sort_center5)
-# print(sort_center6)
-# print(sort_center7)
-# print(sort_center8)
-# print(sort_center9)
-#
+print(sort_center1)
+print(sort_center2)
+print(sort_center3)
+print(sort_center4)
+print(sort_center5)
+print(sort_center6)
+print(sort_center7)
+print(sort_center8)
+print(sort_center9)
 
 # for i in json_data['measurements']:
 #     x_value = i['x']
