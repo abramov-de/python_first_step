@@ -171,15 +171,26 @@ df9 = pd.DataFrame(center9, columns=['Color center', 'Distance', 'Angle'])
 # print(center8)
 # print(center9)
 
-print("Color center 1 :", "\n\n", df1, "\n")
-print("Color center 2 :", "\n\n", df2, "\n")
-print("Color center 3 :", "\n\n", df3, "\n")
-print("Color center 4 :", "\n\n", df4, "\n")
-print("Color center 5 :", "\n\n", df5, "\n")
-print("Color center 6 :", "\n\n", df6, "\n")
-print("Color center 7 :", "\n\n", df7, "\n")
-print("Color center 8 :", "\n\n", df8, "\n")
-print("Color center 9 :", "\n\n", df9, "\n")
+print("Color center 1 :", "\n\n", df1, "\n", "Color center 2 :", "\n\n", df2, "\n",
+      "Color center 3 :", "\n\n", df3, "\n", "Color center 4 :", "\n\n", df4, "\n",
+      "Color center 5 :", "\n\n", df5, "\n", "Color center 6 :", "\n\n", df6, "\n",
+      "Color center 7 :", "\n\n", df7, "\n", "Color center 8 :", "\n\n", df8, "\n",
+      "Color center 9 :", "\n\n", df9, "\n")
+# print("Color center 2 :", "\n\n", df2, "\n")
+# print("Color center 3 :", "\n\n", df3, "\n")
+# print("Color center 4 :", "\n\n", df4, "\n")
+# print("Color center 5 :", "\n\n", df5, "\n")
+# print("Color center 6 :", "\n\n", df6, "\n")
+# print("Color center 7 :", "\n\n", df7, "\n")
+# print("Color center 8 :", "\n\n", df8, "\n")
+# print("Color center 9 :", "\n\n", df9, "\n")
+
+with open('color_centers.txt', 'w') as f:
+    print("Color center 1 :", "\n\n", df1, "\n", "Color center 2 :", "\n\n", df2, "\n",
+          "Color center 3 :", "\n\n", df3, "\n", "Color center 4 :", "\n\n", df4, "\n",
+          "Color center 5 :", "\n\n", df5, "\n", "Color center 6 :", "\n\n", df6, "\n",
+          "Color center 7 :", "\n\n", df7, "\n", "Color center 8 :", "\n\n", df8, "\n",
+          "Color center 9 :", "\n\n", df9, "\n", file=f)
 
 
 # print(df1)
