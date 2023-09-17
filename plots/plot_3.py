@@ -43,7 +43,6 @@ angles8 = []
 dists9 = []
 angles9 = []
 
-
 x_value1 = []
 y_value1 = []
 
@@ -172,7 +171,6 @@ for i in json_data['measurements']:
         x_value9.append(i['x'] + (cos(i['angle']) * distance))
         y_value9.append(i['y'] + (sin(i['angle']) * distance))
 
-
 dists1 = [item if item else 0 for item in dists1]
 dists2 = [item if item else 0 for item in dists2]
 dists3 = [item if item else 0 for item in dists3]
@@ -213,7 +211,6 @@ center7.sort(key=lambda x: x[-1])
 center8.sort(key=lambda x: x[-1])
 center9.sort(key=lambda x: x[-1])
 
-
 df1 = pd.DataFrame(center1, columns=['Color center', 'Distance', 'Angle'])
 df2 = pd.DataFrame(center2, columns=['Color center', 'Distance', 'Angle'])
 df3 = pd.DataFrame(center3, columns=['Color center', 'Distance', 'Angle'])
@@ -223,7 +220,6 @@ df6 = pd.DataFrame(center6, columns=['Color center', 'Distance', 'Angle'])
 df7 = pd.DataFrame(center7, columns=['Color center', 'Distance', 'Angle'])
 df8 = pd.DataFrame(center8, columns=['Color center', 'Distance', 'Angle'])
 df9 = pd.DataFrame(center9, columns=['Color center', 'Distance', 'Angle'])
-
 
 print("Color center 1 :", "\n\n", df1, "\n", "Color center 2 :", "\n\n", df2, "\n",
       "Color center 3 :", "\n\n", df3, "\n", "Color center 4 :", "\n\n", df4, "\n",
@@ -238,13 +234,19 @@ with open('color_centers.txt', 'w') as f:
           "Color center 7 :", "\n\n", df7, "\n", "Color center 8 :", "\n\n", df8, "\n",
           "Color center 9 :", "\n\n", df9, "\n", file=f)
 
+plt.scatter(x_value1, y_value1)
+plt.scatter(x_value2, y_value2)
+plt.scatter(x_value3, y_value3)
+plt.scatter(x_value4, y_value4)
 plt.scatter(x_value5, y_value5)
+plt.scatter(x_value6, y_value6)
+plt.scatter(x_value7, y_value7)
 plt.scatter(x_value8, y_value8)
 plt.scatter(x_value9, y_value9)
-plt.plot()
+plt.grid('True')
+plt.legend(["Center 1", "Center 2", "Center 3", "Center 4", "Center 5", "Center 6",
+            "Center 7", "Center 8", "Center 9"], loc="lower right")
 plt.show()
-
-
 
 # for i in json_data['measurements']:
 #     x_value = i['x']
