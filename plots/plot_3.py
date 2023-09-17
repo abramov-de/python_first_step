@@ -1,6 +1,7 @@
 import json
 import pandas as pd
 from math import sin, cos
+from matplotlib import pyplot as plt
 
 json_file = open('Sergey_Kuznetsov.json', 'r')
 json_data = json.load(json_file)
@@ -237,6 +238,11 @@ with open('color_centers.txt', 'w') as f:
           "Color center 7 :", "\n\n", df7, "\n", "Color center 8 :", "\n\n", df8, "\n",
           "Color center 9 :", "\n\n", df9, "\n", file=f)
 
+plt.scatter(x_value5, y_value5)
+plt.scatter(x_value8, y_value8)
+plt.scatter(x_value9, y_value9)
+plt.plot()
+plt.show()
 
 
 
