@@ -1,5 +1,6 @@
 import json
 import pandas as pd
+from math import sin, cos
 
 json_file = open('Sergey_Kuznetsov.json', 'r')
 json_data = json.load(json_file)
@@ -41,107 +42,134 @@ angles8 = []
 dists9 = []
 angles9 = []
 
-x_origin1 = []
-y_origin1 = []
 
-x_origin2 = []
-y_origin2 = []
+x_value1 = []
+y_value1 = []
 
-x_origin3 = []
-y_origin3 = []
+x_value2 = []
+y_value2 = []
 
-x_origin4 = []
-y_origin4 = []
+x_value3 = []
+y_value3 = []
 
-x_origin5 = []
-y_origin5 = []
+x_value4 = []
+y_value4 = []
 
-x_origin6 = []
-y_origin6 = []
+x_value5 = []
+y_value5 = []
 
-x_origin7 = []
-y_origin7 = []
+x_value6 = []
+y_value6 = []
 
-x_origin8 = []
-y_origin8 = []
+x_value7 = []
+y_value7 = []
 
-x_origin9 = []
-y_origin9 = []
+x_value8 = []
+y_value8 = []
 
+x_value9 = []
+y_value9 = []
 
 for i in json_data['measurements']:
 
     if i['Y'] == Y[0]:
         if i['mode'] == 'calibration':
             continue
-        dists1.append(i['distance'])
+        distance = i['distance']
+        if distance is None:
+            distance = 0
+        dists1.append(distance)
         angles1.append(i['angle'])
-        x_origin1.append(i['x'])
-        y_origin1.append(i['y'])
+        x_value1.append(i['x'] + (cos(i['angle']) * distance))
+        y_value1.append(i['y'] + (sin(i['angle']) * distance))
 
     if i['Y'] == Y[1]:
         if i['mode'] == 'calibration':
             continue
-        dists2.append(i['distance'])
+        distance = i['distance']
+        if distance is None:
+            distance = 0
+        dists2.append(distance)
         angles2.append(i['angle'])
-        x_origin2.append(i['x'])
-        y_origin2.append(i['y'])
+        x_value2.append(i['x'] + (cos(i['angle']) * distance))
+        y_value2.append(i['y'] + (sin(i['angle']) * distance))
 
     if i['Y'] == Y[2]:
         if i['mode'] == 'calibration':
             continue
-        dists3.append(i['distance'])
+        distance = i['distance']
+        if distance is None:
+            distance = 0
+        dists3.append(distance)
         angles3.append(i['angle'])
-        x_origin3.append(i['x'])
-        y_origin3.append(i['y'])
+        x_value3.append(i['x'] + (cos(i['angle']) * distance))
+        y_value3.append(i['y'] + (sin(i['angle']) * distance))
 
     if i['Y'] == Y[3]:
         if i['mode'] == 'calibration':
             continue
-        dists4.append(i['distance'])
+        distance = i['distance']
+        if distance is None:
+            distance = 0
+        dists4.append(distance)
         angles4.append(i['angle'])
-        x_origin4.append(i['x'])
-        y_origin4.append(i['y'])
+        x_value4.append(i['x'] + (cos(i['angle']) * distance))
+        y_value4.append(i['y'] + (sin(i['angle']) * distance))
 
     if i['Y'] == Y[4]:
         if i['mode'] == 'calibration':
             continue
-        dists5.append(i['distance'])
+        distance = i['distance']
+        if distance is None:
+            distance = 0
+        dists5.append(distance)
         angles5.append(i['angle'])
-        x_origin5.append(i['x'])
-        y_origin5.append(i['y'])
+        x_value5.append(i['x'] + (cos(i['angle']) * distance))
+        y_value5.append(i['y'] + (sin(i['angle']) * distance))
 
     if i['Y'] == Y[5]:
         if i['mode'] == 'calibration':
             continue
-        dists6.append(i['distance'])
+        distance = i['distance']
+        if distance is None:
+            distance = 0
+        dists6.append(distance)
         angles6.append(i['angle'])
-        x_origin6.append(i['x'])
-        y_origin6.append(i['y'])
+        x_value6.append(i['x'] + (cos(i['angle']) * distance))
+        y_value6.append(i['y'] + (sin(i['angle']) * distance))
 
     if i['Y'] == Y[6]:
         if i['mode'] == 'calibration':
             continue
-        dists7.append(i['distance'])
+        distance = i['distance']
+        if distance is None:
+            distance = 0
+        dists7.append(distance)
         angles7.append(i['angle'])
-        x_origin7.append(i['x'])
-        y_origin7.append(i['y'])
+        x_value7.append(i['x'] + (cos(i['angle']) * distance))
+        y_value7.append(i['y'] + (sin(i['angle']) * distance))
 
     if i['Y'] == Y[7]:
         if i['mode'] == 'calibration':
             continue
-        dists8.append(i['distance'])
+        distance = i['distance']
+        if distance is None:
+            distance = 0
+        dists8.append(distance)
         angles8.append(i['angle'])
-        x_origin8.append(i['x'])
-        y_origin8.append(i['y'])
+        x_value8.append(i['x'] + (cos(i['angle']) * distance))
+        y_value8.append(i['y'] + (sin(i['angle']) * distance))
 
     if i['Y'] == Y[8]:
         if i['mode'] == 'calibration':
             continue
-        dists9.append(i['distance'])
+        distance = i['distance']
+        if distance is None:
+            distance = 0
+        dists9.append(distance)
         angles9.append(i['angle'])
-        x_origin9.append(i['x'])
-        y_origin9.append(i['y'])
+        x_value9.append(i['x'] + (cos(i['angle']) * distance))
+        y_value9.append(i['y'] + (sin(i['angle']) * distance))
 
 
 dists1 = [item if item else 0 for item in dists1]
@@ -209,11 +237,7 @@ with open('color_centers.txt', 'w') as f:
           "Color center 7 :", "\n\n", df7, "\n", "Color center 8 :", "\n\n", df8, "\n",
           "Color center 9 :", "\n\n", df9, "\n", file=f)
 
-print(x_origin9)
-print(y_origin9)
 
-print(x_origin1)
-print(y_origin1)
 
 
 # for i in json_data['measurements']:
