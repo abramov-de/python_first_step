@@ -41,6 +41,34 @@ angles8 = []
 dists9 = []
 angles9 = []
 
+x_origin1 = []
+y_origin1 = []
+
+x_origin2 = []
+y_origin2 = []
+
+x_origin3 = []
+y_origin3 = []
+
+x_origin4 = []
+y_origin4 = []
+
+x_origin5 = []
+y_origin5 = []
+
+x_origin6 = []
+y_origin6 = []
+
+x_origin7 = []
+y_origin7 = []
+
+x_origin8 = []
+y_origin8 = []
+
+x_origin9 = []
+y_origin9 = []
+
+
 for i in json_data['measurements']:
 
     if i['Y'] == Y[0]:
@@ -48,54 +76,73 @@ for i in json_data['measurements']:
             continue
         dists1.append(i['distance'])
         angles1.append(i['angle'])
+        x_origin1.append(i['x'])
+        y_origin1.append(i['y'])
 
     if i['Y'] == Y[1]:
         if i['mode'] == 'calibration':
             continue
         dists2.append(i['distance'])
         angles2.append(i['angle'])
+        x_origin2.append(i['x'])
+        y_origin2.append(i['y'])
 
     if i['Y'] == Y[2]:
         if i['mode'] == 'calibration':
             continue
         dists3.append(i['distance'])
         angles3.append(i['angle'])
+        x_origin3.append(i['x'])
+        y_origin3.append(i['y'])
 
     if i['Y'] == Y[3]:
         if i['mode'] == 'calibration':
             continue
         dists4.append(i['distance'])
         angles4.append(i['angle'])
+        x_origin4.append(i['x'])
+        y_origin4.append(i['y'])
 
     if i['Y'] == Y[4]:
         if i['mode'] == 'calibration':
             continue
         dists5.append(i['distance'])
         angles5.append(i['angle'])
+        x_origin5.append(i['x'])
+        y_origin5.append(i['y'])
 
     if i['Y'] == Y[5]:
         if i['mode'] == 'calibration':
             continue
         dists6.append(i['distance'])
         angles6.append(i['angle'])
+        x_origin6.append(i['x'])
+        y_origin6.append(i['y'])
 
     if i['Y'] == Y[6]:
         if i['mode'] == 'calibration':
             continue
         dists7.append(i['distance'])
         angles7.append(i['angle'])
+        x_origin7.append(i['x'])
+        y_origin7.append(i['y'])
 
     if i['Y'] == Y[7]:
         if i['mode'] == 'calibration':
             continue
         dists8.append(i['distance'])
         angles8.append(i['angle'])
+        x_origin8.append(i['x'])
+        y_origin8.append(i['y'])
 
     if i['Y'] == Y[8]:
         if i['mode'] == 'calibration':
             continue
         dists9.append(i['distance'])
         angles9.append(i['angle'])
+        x_origin9.append(i['x'])
+        y_origin9.append(i['y'])
+
 
 dists1 = [item if item else 0 for item in dists1]
 dists2 = [item if item else 0 for item in dists2]
@@ -137,6 +184,7 @@ center7.sort(key=lambda x: x[-1])
 center8.sort(key=lambda x: x[-1])
 center9.sort(key=lambda x: x[-1])
 
+
 df1 = pd.DataFrame(center1, columns=['Color center', 'Distance', 'Angle'])
 df2 = pd.DataFrame(center2, columns=['Color center', 'Distance', 'Angle'])
 df3 = pd.DataFrame(center3, columns=['Color center', 'Distance', 'Angle'])
@@ -146,6 +194,7 @@ df6 = pd.DataFrame(center6, columns=['Color center', 'Distance', 'Angle'])
 df7 = pd.DataFrame(center7, columns=['Color center', 'Distance', 'Angle'])
 df8 = pd.DataFrame(center8, columns=['Color center', 'Distance', 'Angle'])
 df9 = pd.DataFrame(center9, columns=['Color center', 'Distance', 'Angle'])
+
 
 print("Color center 1 :", "\n\n", df1, "\n", "Color center 2 :", "\n\n", df2, "\n",
       "Color center 3 :", "\n\n", df3, "\n", "Color center 4 :", "\n\n", df4, "\n",
@@ -159,6 +208,13 @@ with open('color_centers.txt', 'w') as f:
           "Color center 5 :", "\n\n", df5, "\n", "Color center 6 :", "\n\n", df6, "\n",
           "Color center 7 :", "\n\n", df7, "\n", "Color center 8 :", "\n\n", df8, "\n",
           "Color center 9 :", "\n\n", df9, "\n", file=f)
+
+print(x_origin9)
+print(y_origin9)
+
+print(x_origin1)
+print(y_origin1)
+
 
 # for i in json_data['measurements']:
 #     x_value = i['x']
